@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class = "frame">
+            <div class = "calculator">
+                <div class = "historydisplay" id = "historydisplay"></div>
+                <div class = "display" id = "display"></div>
+                <button id = "leftp" data-key = "57" >(</button>
+                <button id = "rightp" data-key = "48" >)</button>
+                <button id = "delete" data-key = "8" ><img src = "https://cdn2.iconfinder.com/data/icons/picons-basic-2/57/basic2-061_back_delete-512.png"
+                    width = "30" height = "30"></button>
+                <button id = "divide" data-key = "111" class = "operator">÷</button>
+                <button id = "seven" data-key = "103" class = "number">7</button>
+                <button id = "eight" data-key = "104" class = "number">8</button>
+                <button id = "nine" data-key = "105" class = "number">9</button>
+                <button id = "multiply" data-key = "106" class = "operator">x</button>
+                <button id = "four" data-key = "100" class = "number">4</button>
+                <button id = "five" data-key = "101" class = "number">5</button>
+                <button id = "six" data-key = "102" class = "number">6</button>
+                <button id = "subtract" data-key = "109" class = "operator">-</button>
+                <button id = "one" data-key = "97" class = "number">1</button>
+                <button id = "two" data-key = "98" class = "number">2</button>
+                <button id = "three" data-key = "99" class = "number">3</button>
+                <button id = "add" data-key = "107" class = "operator">+</button>
+                <button id = "clear" onclick = "clearDisplay()" data-key = "46" class = "number">C</button>
+                <button id = "zero" data-key = "96" class = "number">0</button>
+                <button id = "decimal" data-key = "110" class = "number">.</button>
+                <button id = "equals" data-key = "13" class = "operator">=</button>
+                
+            </div>    
+        </div>
+    </body>
+    <script src="scripts.js"></script>
+    <footer>
+        <p>Calculator web app created by John Ke, using the Odin Project Web Developement Curriculum.</p>
+    </footer>
+</html>
