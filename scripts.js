@@ -147,104 +147,7 @@ function buttonDisplay(id) {
         clearDisplay();
     }
     
-    /*switch (id) {
-        case "one":
-            infixString = infixString.concat("1");
-            display.textContent = infixString;
-            break;
-        case "two":
-            infixString = infixString.concat("2");
-            display.textContent = infixString;            
-            break;
-        case "three":
-            infixString = infixString.concat("3");
-            display.textContent = infixString;            
-            break;
-        case "four":
-            infixString = infixString.concat("4");
-            display.textContent = infixString;
-            break;
-        case "five":
-            infixString = infixString.concat("5");
-            display.textContent = infixString;
-            break;
-        case "six":
-            infixString = infixString.concat("6");
-            display.textContent = infixString;
-            break;
-        case "seven":
-            infixString = infixString.concat("7");
-            display.textContent = infixString;
-            break;
-        case "eight":
-            infixString = infixString.concat("8");
-            display.textContent = infixString;
-            break;
-        case "nine":
-            infixString = infixString.concat("9");
-            display.textContent = infixString;
-            break;
-        case "zero":
-            infixString = infixString.concat("0");
-            display.textContent = infixString;
-            break;
-        case "add":
-            infixString = infixString.concat("+");
-            display.textContent = "";
-            hdisplay.textContent = infixString;
-            break;
-        case "subtract":
-            infixString = infixString.concat("-");
-            display.textContent = "";
-            hdisplay.textContent = infixString;
-            break;
-        case "multiply":
-            infixString = infixString.concat("*");
-            display.textContent = "";
-            hdisplay.textContent = infixString;
-            break;
-        case "divide":
-            infixString = infixString.concat("/");
-            display.textContent = "";
-            hdisplay.textContent = infixString;
-            break;
-        case "equals":
-            display.textContent = (evalPostfix(infixToPostfix(infixString)));
-            hdisplay.textContent = "";
-            existDecimal = false;
-            break;
-        case "leftp":
-            infixString = infixString.concat("(");
-            display.textContent = "";
-            hdisplay.textContent = infixString;
-            break;
-        case "rightp":
-            infixString = infixString.concat(")");
-            display.textContent = "";
-            hdisplay.textContent = infixString;
-            break;
-        case "decimal":
-            if (!existDecimal){
-                infixString = infixString.concat(".");
-                display.textContent = infixString;
-
-                existDecimal = true;
-                break;
-            } else {
-                break;
-            }
-        case "delete":
-            infixString = infixString.substr(0, infixString.length-1);
-            display.textContent = infixString;
-            break;
-        case "clear":
-            clearDisplay();
-            break;
-        default:
-            break;
-    }
-
-    */
+   
 
 }
 
@@ -319,6 +222,9 @@ function evalPostfix(string) {
                     postfixStack.push(operate("multiply", firstOperand, secondOperand));
                     break;
                 case "/":
+                    if (secondOperand == 0) {
+                        return "Error";
+                    }
                     postfixStack.push(operate("divide", firstOperand, secondOperand));
                     break;
                 default:
@@ -326,8 +232,14 @@ function evalPostfix(string) {
             }
         } 
     }
+    
+    var result = postfixStack.pop();    
 
-    return postfixStack.pop();    
+    if (isNaN(result)) {
+        return "Error"
+    } else {
+        return result;
+    }
 
 }
 
