@@ -120,7 +120,8 @@ function buttonDisplay(id) {
     } else if (id in operatorId) {
         infixString = infixString.concat(operatorId[id]);
         if (currentHDisplay.length > 0) {
-            hdisplay.textContent = currentHDisplay.concat(operatorId[id]);
+            hdisplay.textContent = infixString;
+            display.textContent = "";
         } else {
             hdisplay.textContent = currentDisplay.concat(operatorId[id]);
             display.textContent = "";
